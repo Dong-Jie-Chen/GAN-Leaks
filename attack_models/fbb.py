@@ -116,15 +116,15 @@ def main():
     ### load query images
     
     pos_query_imgs = np.load(os.path.join(args.pos_data_dir, 'pos_query_imgs.npy'))
-    assert (pos_query_imgs.max() < 1),"max value of pos_query_imgs is bigger than 1, should rescale data to [-1,1]"
-    assert (pos_query_imgs.min() > -1),"min value of pos_query_imgs is smaller than -1, should rescale data to [-1,1]"
+    assert (pos_query_imgs.max() <= 1),"max value of pos_query_imgs is bigger than 1, should rescale data to [-1,1]"
+    assert (pos_query_imgs.min() >= -1),"min value of pos_query_imgs is smaller than -1, should rescale data to [-1,1]"
     assert (pos_query_imgs.shape[1] == pos_query_imgs.shape[2]),"check the shape of the pos_query_imgs"
     resolution = pos_query_imgs.shape[1]
     #pos_data_paths = get_filepaths_from_dir(args.pos_data_dir, ext='png')[: args.data_num]
     #pos_query_imgs = np.array([read_image(f, resolution) for f in pos_data_paths])
     neg_query_imgs = np.load(os.path.join(args.pos_data_dir, 'neg_query_imgs.npy'))
-    assert (neg_query_imgs.max() < 1),"max value of neg_query_imgs is bigger than 1, should rescale data to [-1,1]"
-    assert (neg_query_imgs.min() > -1),"min value of neg_query_imgs is smaller than -1, should rescale data to [-1,1]"
+    assert (neg_query_imgs.max() <= 1),"max value of neg_query_imgs is bigger than 1, should rescale data to [-1,1]"
+    assert (neg_query_imgs.min() >= -1),"min value of neg_query_imgs is smaller than -1, should rescale data to [-1,1]"
     assert (pos_query_imgs.shape[1] == neg_query_imgs.shape[2]),"check the shape of the neg_query_imgs"
     #neg_data_paths = get_filepaths_from_dir(args.neg_data_dir, ext='png')[: args.data_num]
     #neg_query_imgs = np.array([read_image(f, resolution) for f in neg_data_paths])
