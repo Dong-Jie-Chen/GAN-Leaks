@@ -29,7 +29,7 @@ def parse_arguments():
                         help='the directory for the negative (testing) query images set')
     parser.add_argument('--data_num', '-dnum', type=int, default=20000,
                         help='the number of query images to be considered')
-    parser.add_argument('--resolution', '-resolution', type=int, default=64,
+    parser.add_argument('--resolution', '-resolution', type=int, default=32,
                         help='generated image resolution')
     return parser.parse_args()
 
