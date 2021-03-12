@@ -124,8 +124,10 @@ We pre-train the following victim GAN Models.
     cd attack_models
     python fbb.py \
     -name "Name of the output folder" \
-    -posdir "Directory of the positive (training) query png images" \
-    -negdir "Directory of the negative (testing) query png images" \
+    #-posdir "Directory of the positive (training) query png images" \
+    #-negdir "Directory of the negative (testing) query png images" \
+    -posdir "Directory of the positive (training) query png images: pos_query_imgs.npy" \
+    -negdir "Directory of the negative (testing) query png images: neg_query_imgs.npy" \
     -gdir "Directory of the generated.npz file (default=model_dir)"
     ```
 
